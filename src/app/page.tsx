@@ -1,12 +1,14 @@
+import QuizCard from "@/components/quiz/quizCard";
 import StartQuizCard from "@/components/quiz/startQuizCard";
-import { Award, BookOpen, ClipboardList } from "lucide-react";
+import Btn from "@/components/ui/btn";
+import { ArrowRight, Award, BookOpen, ChevronRightSquare, ClipboardList, Clock } from "lucide-react";
 
 export default function Home() {
     return (
         <>
-            <div className="grow flex items-center px-28">
-                <div>
-                    <h1 className="font-bold text-5xl text-blue-600">Tiger Quiz</h1>
+            <div className="grow flex items-center justify-center px-28">
+                <div className="flex flex-col items-center">
+                    <h1 className="font-bold text-5xl text-blue-600">CPCT Mock Test</h1>
                     <p className="text-xl text-gray-600 mt-4">Test your knowledge, track your progress and excel in your learning journey.</p>
                     <div className="grid grid-cols-1 gap-y-3 mt-8">
                         <div className="flex items-center">
@@ -32,6 +34,14 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="p-10 grid grid-cols-3 gap-8">
+                <QuizCard />
+                <QuizCard />
+                <QuizCard />
+                <QuizCard />
+                <QuizCard />
+                <QuizCard />
             </div>
         </>
     );

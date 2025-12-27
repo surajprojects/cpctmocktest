@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tiger Quiz",
+  title: "CPCT Mock Test",
   description: "Test your knowledge and excel in your learning journey.",
 };
 
