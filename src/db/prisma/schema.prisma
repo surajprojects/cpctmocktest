@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  ADMIN
+  STUDENT
+}
+
+model User {
+  id       String   @id @default(uuid())
+  username String   @unique
+  password String
+  name     String
+  email    String   @unique
+  dob      DateTime
+
+  role UserRole @default(STUDENT)
+
+  mockTests MockTest[]
+
+  photo   String?
+  remarks String?
+
+  isDeleted Boolean   @default(false)
+  deletedOn DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model MockTest {
+  id                 String   @id @default(uuid())
+  title              String
+  description        String
+  totalQuestion      Int
+  timeLimitInMinutes Int
+  examDate           DateTime
+
+  questions   Question[]
+  isPublished Boolean    @default(false)
+
+  createdById String
+  createdBy   User   @relation(fields: [createdById], references: [id])
+
+  isDeleted Boolean   @default(false)
+  deletedOn DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+enum CorrectOption {
+  A
+  B
+  C
+  D
+}
+
+model Question {
+  id String @id @default(uuid())
+
+  questionEn String
+  questionHi String
+
+  optionAEn String
+  optionAHi String
+
+  optionBEn String
+  optionBHi String
+
+  optionCEn String
+  optionCHi String
+
+  optionDEn String
+  optionDHi String
+
+  correctOption CorrectOption
+
+  explanationEn String?
+  explanationHi String?
+
+  marks Int @default(1)
+
+  mockTestId String
+  mockTest   MockTest @relation(fields: [mockTestId], references: [id])
+
+  isDeleted Boolean   @default(false)
+  deletedOn DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
