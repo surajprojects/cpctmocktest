@@ -1,41 +1,29 @@
-import QuizCard from "@/components/quiz/quizCard";
-import StartQuizCard from "@/components/quiz/startQuizCard";
 import Btn from "@/components/ui/btn";
-import { ArrowRight, Award, BookOpen, ChevronRightSquare, ClipboardList, Clock } from "lucide-react";
+import QuizCard from "@/components/quiz/quizCard";
 
-export default function Home() {
+export default async function Home() {
     return (
         <>
-            <div className="grow flex items-center justify-center px-28">
-                <div className="flex flex-col items-center">
-                    <h1 className="font-bold text-5xl text-blue-600">CPCT Mock Test</h1>
-                    <p className="text-xl text-gray-600 mt-4">Test your knowledge, track your progress and excel in your learning journey.</p>
-                    <div className="grid grid-cols-1 gap-y-3 mt-8">
-                        <div className="flex items-center">
-                            <ClipboardList className="size-9 text-blue-600 bg-blue-100 p-2 rounded-lg" />
-                            <div className="ml-3">
-                                <p className="font-medium">Timed Quizzes</p>
-                                <p className="text-sm text-gray-500">Take challenging quizzes with real-time tracking.</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center">
-                            <BookOpen className="size-9 text-indigo-600 bg-indigo-100 p-2 rounded-lg" />
-                            <div className="ml-3">
-                                <p className="font-medium">Question Management</p>
-                                <p className="text-sm text-gray-500">Creator can add questions via UI or JSON upload.</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center">
-                            <Award className="size-9 text-violet-600 bg-violet-100 p-2 rounded-lg" />
-                            <div className="ml-3">
-                                <p className="font-medium">Instant Results</p>
-                                <p className="text-sm text-gray-500">Get detailed performance analytics after submission.</p>
-                            </div>
-                        </div>
-                    </div>
+            {/* Header */}
+            <div className="w-full font-sans fixed top-0 left-0 z-50 bg-white border-b shadow-sm py-4 md:py-6 px-6 md:px-12 flex justify-between items-center">
+                <div>
+                    {/* Title */}
+                    <h1 className="font-bold text-2xl md:text-3xl text-blue-600">CPCT Mock Test</h1>
+                    {/* Description */}
+                    <p className="text-sm md:text-md mt-1 text-gray-600/80">Select a test and begin your practice.</p>
+                </div>
+                {/* Sign In Button */}
+                <div className="hidden sm:block w-24">
+                    <Btn>
+                        Sign In
+                    </Btn>
                 </div>
             </div>
-            <div className="p-10 grid grid-cols-3 gap-8">
+            {/* All Quiz Cards Wrapper */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-24 md:mt-32 py-6 md:py-8 px-6 md:px-12">
+                <QuizCard />
+                <QuizCard />
+                <QuizCard />
                 <QuizCard />
                 <QuizCard />
                 <QuizCard />

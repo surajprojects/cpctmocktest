@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Toaster } from "@/components/ui/sonner";
 import TrpcProvider from "@/components/home/trpcProvider";
+import Footer from "@/components/home/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
         >
           <TrpcProvider>
             {children}
+            <Footer />
             <Toaster position="bottom-right" theme="system" />
           </TrpcProvider>
         </body>

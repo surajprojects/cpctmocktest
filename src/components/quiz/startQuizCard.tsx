@@ -1,7 +1,12 @@
+import { Dispatch, SetStateAction } from "react";
 import Btn from "../ui/btn";
 import { Play } from "lucide-react";
 
-export default function StartQuizCard() {
+export default function StartQuizCard({
+    setStartQuiz,
+}: {
+    setStartQuiz: Dispatch<SetStateAction<boolean>>,
+}) {
     return (
         <>
             <div className="bg-white border border-gray-200 rounded-xl p-5 max-w-lg shadow-xl">
@@ -18,10 +23,12 @@ export default function StartQuizCard() {
                         <li>Submit before time runs out</li>
                     </ul>
                 </div>
-                <Btn>
+                <Btn
+                    handleClick={() => setStartQuiz(true)}
+                >
                     <div className="flex justify-center items-center w-full">
                         <Play className="size-4 mx-2" />
-                        <p>Start Quiz</p>
+                        <p>Start Test</p>
                     </div>
                 </Btn>
             </div>

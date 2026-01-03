@@ -1,5 +1,5 @@
-import { Home, RotateCcw, TriangleAlert } from "lucide-react";
 import Btn from "../ui/btn";
+import { Home, RotateCcw, TriangleAlert } from "lucide-react";
 
 export default function QuizResult() {
     return (
