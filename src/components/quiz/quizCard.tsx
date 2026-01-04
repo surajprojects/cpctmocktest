@@ -25,12 +25,12 @@ export default function QuizCard({
                     {/* Total Question Card */}
                     <div className="bg-blue-50 rounded-lg flex flex-col justify-center items-center py-2.5 sm:py-3 w-full">
                         <p className="font-sans text-blue-600 font-bold text-xl sm:text-2xl">{totalQuestion}</p>
-                        <p className="text-xs sm:text-sm font-sans text-gray-500">Questions</p>
+                        <p className="text-xs sm:text-sm font-sans text-blue-600/85 font-medium">Questions</p>
                     </div>
                     {/* Total Minutes Card */}
                     <div className="bg-yellow-100/85 rounded-lg flex flex-col justify-center items-center py-2.5 sm:py-3 w-full">
-                        <p className="font-sans text-yellow-600/80 font-bold text-xl sm:text-2xl flex items-center"><Clock className="size-3.5 sm:size-4 mr-1 sm:mr-1.5" />{timeLimitInMinutes}</p>
-                        <p className="text-xs sm:text-sm font-sans text-yellow-500">Minutes</p>
+                        <p className="font-sans text-yellow-600/75 font-bold text-xl sm:text-2xl flex items-center"><Clock className="size-3.5 sm:size-4 mr-1 sm:mr-1.5" />{timeLimitInMinutes}</p>
+                        <p className="text-xs sm:text-sm font-sans text-yellow-600/75 font-medium">Minutes</p>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 gap-y-1.5 sm:gap-y-2 mb-3.5 sm:mb-5">

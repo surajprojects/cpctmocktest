@@ -15,7 +15,7 @@ export default function QuizQuestion() {
                     </Button>
                 </div>
                 {/* Question */}
-                <p className="mt-0 md:mt-2 mb-4 md:mb-8 font-semibold text-lg md:text-xl">What is the capital of France?</p>
+                <p className="mt-0 md:mt-2 mb-4 md:mb-6 font-semibold text-lg md:text-xl">What is the capital of France?</p>
                 {/* Options */}
                 <div className="grid grid-cols-1 gap-y-4">
                     <QuizOption key={1} />
