@@ -39,7 +39,7 @@ model MockTest {
   id                 String   @id @default(uuid())
   title              String
   description        String
-  totalQuestion      Int
+  totalQuestions     Int
   timeLimitInMinutes Int
   examDate           DateTime
 
