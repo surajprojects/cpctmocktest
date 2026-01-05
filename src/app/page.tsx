@@ -1,7 +1,7 @@
 import Btn from "@/components/ui/btn";
 import QuizCard from "@/components/quiz/quizCard";
 
-export default async function Home() {
+export default function Home() {
     return (
         <>
             {/* Header */}
