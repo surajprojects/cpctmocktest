@@ -19,7 +19,7 @@ export default function AddQuestion() {
                             className="focus-visible:ring-blue-400/80"
                         />
                     </div>
-                    <div>
+                    <div className="mb-4">
                         <Label className="mt-4">Options</Label>
                         <div className="grid grid-cols-1 gap-y-3 my-2.5">
                             <div className="flex items-center">
@@ -40,14 +40,6 @@ export default function AddQuestion() {
                             </div>
                         </div>
                         <p className="text-xs text-gray-500">Select the correct answer</p>
-                    </div>
-                    <div className="my-4">
-                        <Label htmlFor="category" className="mb-2.5">Category</Label>
-                        <Input
-                            id="category"
-                            placeholder="e.g., Science, History, Math"
-                            className="focus-visible:ring-blue-400/80"
-                        />
                     </div>
                     <Btn>
                         <div className="flex justify-center items-center w-full">

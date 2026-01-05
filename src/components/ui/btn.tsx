@@ -26,7 +26,7 @@ export default function Btn({
                 type={btnType}
                 disabled={isLoading ? true : btnDisabled}
                 onClick={handleClick}
-                className={clsx("font-sans w-full text-sm font-semibold py-2 rounded-lg hover:cursor-pointer  duration-300 ease-out outline-none disabled:cursor-not-allowed", className)}>
+                className={clsx("font-sans w-full text-sm font-medium py-2 rounded-lg hover:cursor-pointer  duration-300 ease-out outline-none disabled:cursor-not-allowed", className)}>
                 {isLoading ? <div className="flex justify-center items-center w-full"><Spinner className={spinnerClassName} /></div> : children}
             </button>
         </>

@@ -8,6 +8,7 @@ import QuizQuestion from "@/components/quiz/quizQuestion";
 import StartQuizCard from "@/components/quiz/startQuizCard";
 import QuizNavigation from "@/components/quiz/quizNavigation";
 import QuizResultQuestionCard from "@/components/quiz/quizResultQuestionCard";
+import QuizMode from "@/components/quiz/quizMode";
 
 export default function MockTest() {
     const [startQuiz, setStartQuiz] = useState<boolean>(false);
@@ -43,16 +44,5 @@ export default function MockTest() {
         );
     }
 
-    return (
-        <>
-            <QuizHeader />
-            <div className="grow p-7 lg:p-9 flex flex-col md:flex-row gap-8">
-                <div className="flex flex-col gap-6 md:gap-8 grow-12">
-                    <QuizQuestion />
-                    <QuizNavigation />
-                </div>
-                <QuizSummary />
-            </div>
-        </>
-    );
+    return <QuizMode />;
 };

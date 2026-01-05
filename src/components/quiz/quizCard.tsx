@@ -1,13 +1,15 @@
-import Btn from "../ui/btn";
+import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
 
 export default function QuizCard({
+    id = "1",
     title = "General Knowledge",
     description = "Test your general knowledge across various topics including geography...",
     totalQuestion = 75,
     timeLimitInMinutes = 120,
     examDate = "21 Nov. 2025",
 }: {
+    id?: string,
     title?: string,
     description?: string,
     totalQuestion?: number,
@@ -51,12 +53,12 @@ export default function QuizCard({
                     </p>
                 </div>
                 {/* Start Button */}
-                <Btn>
-                    <div className="flex justify-center items-center w-full">
+                <Link href={`/mock/${id}`}>
+                    <div className="flex justify-center items-center w-full font-sans text-sm font-medium py-2 rounded-lg hover:cursor-pointer duration-300 ease-out outline-none bg-blue-600/90 hover:bg-blue-600/85 text-white">
                         <p className="text-xs sm:text-sm">Start Test</p>
                         <ArrowRight className="size-4 ml-1 sm:ml-2" />
                     </div>
-                </Btn>
+                </Link>
             </div>
         </>
     );

@@ -11,10 +11,7 @@ export default function QuestionCard() {
                         <Trash2 className="size-4 text-red-600" />
                     </Button>
                 </div>
-                <div className="my-2">
-                    <span className="text-blue-600 font-sans text-xs bg-blue-50 rounded-sm px-3 py-1">Science</span>
-                </div>
-                <div className="mt-4 text-gray-500 flex flex-col gap-y-2.5 text-sm font-sans">
+                <div className="mt-1.5 text-gray-500 flex flex-col gap-y-2.5 text-sm font-sans">
                     <p className="rounded-sm px-2 py-1">A. London</p>
                     <p className="rounded-sm px-2 py-1">B. Berlin</p>
                     <p className="text-green-600 bg-green-100/75 rounded-sm px-2 py-1">C. Paris</p>
