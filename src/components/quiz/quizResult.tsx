@@ -1,7 +1,13 @@
 import Btn from "../ui/btn";
 import { Home, RotateCcw, TriangleAlert } from "lucide-react";
 
-export default function QuizResult() {
+export default function QuizResult({
+    totalQuestions = 4,
+    correctAnswers = 1,
+}: {
+    totalQuestions?: number,
+    correctAnswers?: number,
+}) {
     return (
         <>
             <div className="shadow-lg border border-gray-200 rounded-xl p-6 bg-white hover:shadow-xl transition duration-300 ease-in-out">
@@ -9,16 +15,16 @@ export default function QuizResult() {
                     <div className="bg-yellow-100/70 p-6 rounded-full mb-5">
                         <TriangleAlert className="size-16 text-yellow-500" />
                     </div>
-                    <p className="font-sans text-3xl font-semibold">Quiz Completed</p>
+                    <p className="font-sans text-3xl font-semibold">Test Completed</p>
                     <p className="font-sans text-gray-500 mt-2">Keep practicing to improve your score.</p>
                 </div>
                 <div className="grid grid-cols-3 gap-6 my-10">
                     <div className="bg-blue-50 rounded-lg flex flex-col justify-center items-center py-6">
-                        <p className="font-sans text-blue-600 font-bold text-4xl">0/4</p>
+                        <p className="font-sans text-blue-600 font-bold text-4xl">{correctAnswers}/{totalQuestions}</p>
                         <p className="text-sm font-sans text-gray-500 mt-2">Correct Answers</p>
                     </div>
                     <div className="bg-gray-100 rounded-lg flex flex-col justify-center items-center py-6">
-                        <p className="font-sans text-black font-bold text-4xl">0%</p>
+                        <p className="font-sans text-black font-bold text-4xl">{(correctAnswers / totalQuestions) * 100}%</p>
                         <p className="text-sm font-sans text-gray-500 mt-2">Score Percentage</p>
                     </div>
                     <div className="bg-yellow-100/70 rounded-lg flex flex-col justify-center items-center py-6">

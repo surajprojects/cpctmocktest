@@ -21,7 +21,7 @@ export default function Home() {
                 </div> */}
             </div>
             {/* All Quiz Cards Wrapper */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-24 md:mt-32 py-6 md:py-8 px-6 md:px-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 mt-24 md:mt-32 py-6 md:py-8 px-6 md:px-12">
                 <QuizCard
                     key={1}
                     id={seedData.mockTest.id}
