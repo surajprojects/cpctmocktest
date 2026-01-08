@@ -1,6 +1,8 @@
 import Btn from "../ui/btn";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 import TimerDisplay from "../ui/timerDisplay";
+import ConfirmDialog from "../ui/confirmDialog";
 import { CircleCheckBig, Globe, LogOut, User } from "lucide-react";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
@@ -13,7 +15,10 @@ export default function QuizHeader({
     setIsSubmitted: Dispatch<SetStateAction<boolean>>,
     setIsHindiSelected: Dispatch<SetStateAction<boolean>>,
 }) {
+    const router = useRouter();
     const [hasTimeUp, setHasTimeUp] = useState(false);
+    const [showSubmitForm, setShowSubmitForm] = useState<boolean>(false);
+    const [showExitForm, setShowExitForm] = useState<boolean>(false);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const [questionLanguage, setQuestionLanguage] = useState("EN");
     const [timeLeftInSeconds, setTimeLeftInSeconds] = useState((quizTimeInMinutes * 60));
@@ -56,7 +61,7 @@ export default function QuizHeader({
         if (hasTimeUp) {
             setIsSubmitted(true);
         }
-    }, [hasTimeUp])
+    }, [hasTimeUp]);
 
     useEffect(() => {
         if (questionLanguage === "HI") {
@@ -64,7 +69,7 @@ export default function QuizHeader({
         } else {
             setIsHindiSelected(false);
         }
-    }, [questionLanguage])
+    }, [questionLanguage]);
 
     return (
         <>
@@ -74,12 +79,11 @@ export default function QuizHeader({
                     <User className="size-9 text-white bg-blue-600 p-2 rounded-lg mr-2.5" />
                     <div>
                         {/* Title */}
-                        <p className="text-lg font-bold font-sans">Quiz Mode</p>
+                        <p className="text-lg font-bold font-sans">Mock Test</p>
                         {/* Description */}
                         <p className="text-gray-600 text-sm font-sans">John Doe</p>
                     </div>
                 </div>
-
                 <div className="flex items-center">
                     {/* Question Language */}
                     <div className="flex items-center text-sm mx-3">
@@ -102,7 +106,7 @@ export default function QuizHeader({
                     {/* Submit Button */}
                     <div className="w-24 mr-3">
                         <Btn
-                            handleClick={() => setIsSubmitted(true)}
+                            handleClick={() => setShowSubmitForm(true)}
                             className="bg-green-100 hover:bg-green-200/75 text-green-600"
                         >
                             <div className="flex justify-center items-center w-full">
@@ -113,6 +117,7 @@ export default function QuizHeader({
                     </div>
                     {/* Exit Button */}
                     <Button
+                        onClick={() => setShowExitForm(true)}
                         variant="outline"
                         className="cursor-pointer"
                     >
@@ -121,6 +126,18 @@ export default function QuizHeader({
                     </Button>
                 </div>
             </div >
+            {/* Confirm Submit Dialog */}
+            <ConfirmDialog
+                showForm={showSubmitForm}
+                setShowForm={setShowSubmitForm}
+                handleConfirm={() => { setIsSubmitted(true) }}
+            />
+            {/* Exit Dialog */}
+            <ConfirmDialog
+                showForm={showExitForm}
+                setShowForm={setShowExitForm}
+                handleConfirm={() => { router.push("/") }}
+            />
         </>
     );
 };

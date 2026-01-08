@@ -17,7 +17,7 @@ export default function QuizSummaryNavigation({
     const notAnsweredQuestions = userAnswers.filter((userAnswer) => userAnswer.selectedAnswer === undefined).length;
     return (
         <>
-            <div className="shadow-sm border border-gray-200 rounded-xl p-5 md:p-6 bg-white grow h-fit">
+            <div className="shadow-sm border border-gray-200 rounded-xl p-5 md:p-6 bg-white grow h-fit max-w-sm">
                 {/* Questions Summary */}
                 <div className="grid grid-cols-2 gap-x-3">
                     <div className="bg-green-100 text-green-600/90 rounded-lg p-3.5 md:p-4">
@@ -32,7 +32,7 @@ export default function QuizSummaryNavigation({
                 {/* Questions Navigation */}
                 <div className="border-y border-gray-200 py-2.5 md:py-3 my-3.5 md:my-4">
                     <p className="text-sm md:text-base font-semibold">Question Navigation</p>
-                    <div className="mt-3 mb-1 flex flex-wrap gap-2">
+                    <div className="mt-3 mb-1 flex flex-wrap gap-1 gap-y-2.5">
                         <QuizAllQuestionNumbers
                             totalQuestions={totalQuestions}
                             currentQuestionNo={currentQuestionNo}

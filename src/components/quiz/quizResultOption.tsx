@@ -23,7 +23,7 @@ export default function QuizResultOption({
                         <p>{text}</p>
                         {(correct || wrong) && correct ? <CircleCheck className="size-5 text-green-600" /> : wrong ? <CircleX className="size-5 text-red-600" /> : ""}
                     </div>
-                    {(correct || wrong) && <p className={clsx("text-xs font-sans mt-1", correct ? "text-green-600" : wrong ? "text-red-600" : "")}>Correct Answer</p>}
+                    {(correct || wrong) && <p className={clsx("text-xs font-sans mt-1", correct ? "text-green-600" : wrong ? "text-red-600" : "")}>{correct ? "Correct" : "Wrong"} Answer</p>}
                 </div>
             </div >
         </>

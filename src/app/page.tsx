@@ -31,51 +31,6 @@ export default function Home() {
                     timeLimitInMinutes={seedData.mockTest.timeLimitInMinutes}
                     examDate={formatDate(seedData.mockTest.examDate.split("T")[0])}
                 />
-                <QuizCard
-                    key={2}
-                    id={seedData.mockTest.id}
-                    title={seedData.mockTest.title}
-                    description={seedData.mockTest.description}
-                    totalQuestion={seedData.mockTest.totalQuestions}
-                    timeLimitInMinutes={seedData.mockTest.timeLimitInMinutes}
-                    examDate={formatDate(seedData.mockTest.examDate.split("T")[0])}
-                />
-                <QuizCard
-                    key={3}
-                    id={seedData.mockTest.id}
-                    title={seedData.mockTest.title}
-                    description={seedData.mockTest.description}
-                    totalQuestion={seedData.mockTest.totalQuestions}
-                    timeLimitInMinutes={seedData.mockTest.timeLimitInMinutes}
-                    examDate={formatDate(seedData.mockTest.examDate.split("T")[0])}
-                />
-                <QuizCard
-                    key={4}
-                    id={seedData.mockTest.id}
-                    title={seedData.mockTest.title}
-                    description={seedData.mockTest.description}
-                    totalQuestion={seedData.mockTest.totalQuestions}
-                    timeLimitInMinutes={seedData.mockTest.timeLimitInMinutes}
-                    examDate={formatDate(seedData.mockTest.examDate.split("T")[0])}
-                />
-                <QuizCard
-                    key={5}
-                    id={seedData.mockTest.id}
-                    title={seedData.mockTest.title}
-                    description={seedData.mockTest.description}
-                    totalQuestion={seedData.mockTest.totalQuestions}
-                    timeLimitInMinutes={seedData.mockTest.timeLimitInMinutes}
-                    examDate={formatDate(seedData.mockTest.examDate.split("T")[0])}
-                />
-                <QuizCard
-                    key={6}
-                    id={seedData.mockTest.id}
-                    title={seedData.mockTest.title}
-                    description={seedData.mockTest.description}
-                    totalQuestion={seedData.mockTest.totalQuestions}
-                    timeLimitInMinutes={seedData.mockTest.timeLimitInMinutes}
-                    examDate={formatDate(seedData.mockTest.examDate.split("T")[0])}
-                />
             </div>
         </>
     );

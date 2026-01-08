@@ -2,7 +2,7 @@ import QuizHeader from "./quizHeader";
 import QuizQuestion from "./quizQuestion";
 import QuizNavigation from "./quizNavigation";
 import QuizSummaryNavigation from "./quizSummaryNavigation";
-import { Dispatch, RefObject, SetStateAction, useState } from "react";
+import { Dispatch, RefObject, SetStateAction, useEffect, useState } from "react";
 
 export interface userAnswersType {
     questionId: string,
@@ -12,11 +12,13 @@ export interface userAnswersType {
 };
 
 export default function QuizMode({
+    quizTimeInMinutes,
     setIsSubmitted,
     userAnswers,
     setUserAnswers,
     allQuestions,
 }: {
+    quizTimeInMinutes: number,
     setIsSubmitted: Dispatch<SetStateAction<boolean>>,
     userAnswers: userAnswersType[],
     setUserAnswers: Dispatch<SetStateAction<userAnswersType[]>>,
@@ -38,9 +40,25 @@ export default function QuizMode({
 }) {
     const [isHindiSelected, setIsHindiSelected] = useState(false);
     const [currentQuestionNo, setCurrentQuestionNo] = useState<number>(1);
+
+    // Tab or Window Close or Page Refresh Dialog
+    useEffect(() => {
+        const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+            e.preventDefault()
+            e.returnValue = "" // required for Chrome
+        }
+
+        window.addEventListener("beforeunload", handleBeforeUnload)
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload)
+        }
+    }, []);
+
     return (
         <>
             <QuizHeader
+                quizTimeInMinutes={quizTimeInMinutes}
                 setIsSubmitted={setIsSubmitted}
                 setIsHindiSelected={setIsHindiSelected}
             />
